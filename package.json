@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack-dev-server --progress --colors --config webpack.dev.js",
     "build": "webpack --progress --colors --config webpack.prod.js"
   },
@@ -37,11 +37,18 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.3",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^4.2.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.7.1",
+    "jest": "^24.7.1",
+    "react-test-renderer": "^16.8.6"
   }
 }

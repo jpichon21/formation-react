@@ -1,25 +1,26 @@
-import { Component, Fragment } from 'react'
-import Clock from './components/clock'
-import Counter from './components/counter'
+import {Component, Fragment} from 'react'
 import { hot } from 'react-hot-loader'
-import MyForm from './components/my-form';
+import Clock from './components/clock'
+import Counter from './components/counter';
+import MyForm from './components/my-form'; 
+import { HashRouter } from 'react-router-dom' // ou BrowserRouter pour avoir les "vraies" url
+import {Route, Switch, Redirect} from 'react-router'
 
 class App extends Component {
-  render () {
-      //on render le component Clock 
-    return(
-        <Fragment>
-        <MyForm></MyForm>
-            <h1> Hello world ! </h1>
-            <Counter intervalcount={1000}></Counter>
-            <Clock /> 
-            <Clock />
-            <Clock />
-            <Clock />
-            <Clock />
-        </Fragment>
-    )
-  }
+    render(){
+        return(
+            <Fragment>
+                <HashRouter>
+                    <Switch>
+                        <Route path='/clock' exact component={Clock}/>
+                        <Route path='/counter' exact component={Counter}/>
+                        <Route path='/form' exact component={MyForm}/>
+                        <Route component={ ()=> <Redirect to ="/clock"/>}/>
+                    </Switch>
+                </HashRouter>
+            </Fragment>
+        )
+    }
 }
 
-export default hot(module)(App)
+export default hot(module) (App)
