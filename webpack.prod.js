@@ -28,7 +28,7 @@ module.exports = merge(common, {
  devtool: 'source-map'
 ,
  plugins: [
- new CleanWebpackPlugin(['dist']),
+ new CleanWebpackPlugin({dir: ['dist']}),
  new webpack.DefinePlugin({
  'process.env.NODE_ENV': JSON.stringify('production'
 )
