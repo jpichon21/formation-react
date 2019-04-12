@@ -22,6 +22,7 @@ export default class Counter extends React.Component {
     )
   }
   // La méthode increment() incrémente la valeur du compteur de 1
+  // On passe un callback pour éviter un souci de désynchro
   increment() {
     this.setState(prevState => ({ count: prevState.count+this.props.intervalcount }))
   }
